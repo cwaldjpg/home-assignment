@@ -1,15 +1,23 @@
 import createMiddleware from "next-intl/middleware";
-import { locales } from "utils/config";
+import { locales, defaultLocale, localePrefix } from "utils/config";
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: locales,
+  locales,
   // Used when no locale matches
-  defaultLocale: "ja",
-  localePrefix: 'as-needed'
+  defaultLocale,
+  localePrefix,
 });
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/", "/(ja|en)/:path*"],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!_next/static|_next/image|images|health|favicon.ico).*|)',
+  ],
 };

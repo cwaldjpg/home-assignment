@@ -1,5 +1,16 @@
 {
-  "Index": {
-    "title": "こんにちは世界！"
+  "login": {
+    "title": "ログイン",
+    "welcome": "おかえり、"
+  },
+  "forgotEmail": {
+    "title": "忘れられたメール"
+  },
+  "form": {
+    "email": "メールアドレス"
+  },
+  "validation": {
+    "required": "この項目は入力必須です",
+    "invalid": "無効な形式です"
   }
 }

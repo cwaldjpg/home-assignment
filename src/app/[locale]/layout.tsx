@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
+import { Noto_Serif_JP } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import LangSwitcher from "components/LangSwitcher";
-import "./globals.css";
+import LocaleSwitcher from "components/LocaleSwitcher";
+import "@/globals.css";
 
-const noto = Noto_Sans_JP({
+const notoSerif = Noto_Serif_JP({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "900"],
   display: "swap",
+  variable: '--font-noto-serif',
   fallback: ["system-ui", "sans-serif"],
 });
 
@@ -28,12 +29,15 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
-      <body className={noto.className}>
+      <head>
+        <link href="/favicon.ico" rel="icon" />
+      </head>
+      <body className={notoSerif.variable}>
         <NextIntlClientProvider messages={messages}>
           <header className="fixed top-0 h-16 w-full flex justify-end items-center shadow-lg bg-white px-6">
-            <LangSwitcher />
+            <LocaleSwitcher />
           </header>
-          <main className="flex min-h-screen flex-col items-center justify-center p-6 pt-16 bg-slate-300">
+          <main className="flex min-h-screen flex-col items-center justify-center p-6 pt-16 bg-slate-200">
             {children}
           </main>
         </NextIntlClientProvider>
