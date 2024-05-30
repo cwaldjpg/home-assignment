@@ -8,10 +8,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      keyframes: {
+        slideFromTopBounce: {
+          '0%': { transform: 'translateY(-50%)', opacity: '0' },
+          '60%': { transform: 'translateY(10px)', opacity: '1' },
+          '80%': { transform: 'translateY(-10px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        slideOut: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(-50%)', opacity: '0' }
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        slideFromTopBounce: 'slideFromTopBounce 1s ease-out forwards',
+        slideOut: 'slideOut 0.5s ease-out forwards',
+        fadeIn: 'fadeIn 1s ease-in-out forwards',
       },
     },
   },

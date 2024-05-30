@@ -1,5 +1,16 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "login": {
+    "title": "Login",
+    "welcome": "Welcome back,"
+  },
+  "forgotEmail": {
+    "title": "Forgotten email"
+  },
+  "form": {
+    "email": "Email"
+  },
+  "validation": {
+    "required": "Required",
+    "invalid": "Invalid value"
   }
 }
