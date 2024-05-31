@@ -1,33 +1,38 @@
 "use client";
 import { SubmitHandler } from "react-hook-form";
-import LoginCard, { LoginFormValues } from "./LoginCard";
-import { useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { create } from "zustand";
+import ForgotEmailCard, { ForgotEmailFormValues } from "./ForgotEmailCard";
+import { useEffect } from "react";
 
 const useStore = create<{
-  email: string;
-  setEmail: (payload: string) => void;
+  user: ForgotEmailFormValues;
+  setUser: (payload: { firstName: string; lastName: string }) => void;
   isLoading: boolean;
   setIsLoading: (payload: boolean) => void;
 }>((set) => ({
-  email: "",
-  setEmail: (payload) => set({ email: payload }),
+  user: {
+    firstName: "",
+    lastName: "",
+  },
+  setUser: (payload) => set({ user: payload }),
   isLoading: false,
   setIsLoading: (payload) => set({ isLoading: payload }),
 }));
 
-export default function LoginPage() {
+export default function ForgotEmailPage() {
   const t = useTranslations();
   const locale = useLocale();
-  const { email, setEmail, isLoading, setIsLoading } = useStore();
+  const { user, setUser, isLoading, setIsLoading } = useStore();
 
   useEffect(() => {
-    setEmail("");
+    setUser({ firstName: "", lastName: "" });
     setIsLoading(false);
-  }, [locale, setEmail, setIsLoading]);
+  }, [locale, setUser, setIsLoading]);
 
-  const handleSubmitLogin: SubmitHandler<LoginFormValues> = async (values) => {
+  const handleSubmitLogin: SubmitHandler<ForgotEmailFormValues> = async (
+    values
+  ) => {
     try {
       setIsLoading(true);
       await fetch("https://httpbin.org/post", {
@@ -35,30 +40,33 @@ export default function LoginPage() {
       });
       setTimeout(() => {
         setIsLoading(false);
-        setEmail(values.email);
+        setUser(values);
       }, 2000);
     } catch (e) {
       console.log("Error: ", e);
     }
   };
 
+  const fullName =
+    user.firstName && user.lastName ? `${user.firstName} ${user.lastName}` : "";
+
   return (
     <>
-      <LoginCard
+      <ForgotEmailCard
+        isLoading={isLoading}
         onSubmit={handleSubmitLogin}
         className={
-          email
+          fullName
             ? "z-0 pointer-events-none animate-slideOut"
             : "z-[1] animate-slideFromTopBounce"
         }
-        isLoading={isLoading}
       />
       <p
         className={`absolute text-3xl opacity-0 z-0 ${
-          email ? "animate-fadeIn animation-delay-500 z-[1]" : ""
+          fullName ? "animate-fadeIn animation-delay-500 z-[1]" : ""
         }`}
       >
-        {t("login.welcome")} <b>{email}</b>
+        {t("forgotEmail.contacting")} <b>{fullName}</b>
       </p>
     </>
   );

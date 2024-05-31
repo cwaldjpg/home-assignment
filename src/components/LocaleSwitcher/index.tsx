@@ -14,7 +14,7 @@ const LocaleSwitcher = () => {
   const pathname = usePathname();
   const locale = useLocale()
   return (
-    <Link href={pathname} locale={locale !== "ja" ? "ja" : "en"} replace shallow>
+    <Link href={pathname} locale={locale !== "ja" ? "ja" : "en"} replace>
       <button>{localeNames[locale]}</button>
     </Link>
   );
