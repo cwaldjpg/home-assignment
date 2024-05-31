@@ -4,10 +4,16 @@
     "welcome": "Welcome back,"
   },
   "forgotEmail": {
-    "title": "Forgotten email"
+    "title": "Forgotten email",
+    "send": "Send",
+    "subTitle": "Did you forget your password?",
+    "description": "Ensure you enter your full name accurately as registered with the email provider. Once both fields are filled out, click the Submit button. This process helps verify your identity and allows the system to search for your associated email account. Follow any further instructions provided to recover or confirm your email address.",
+    "contacting": "We will try to email you"
   },
   "form": {
-    "email": "Email"
+    "email": "Email",
+    "lastName": "Last name",
+    "firstName": "First name"
   },
   "validation": {
     "required": "Required",
