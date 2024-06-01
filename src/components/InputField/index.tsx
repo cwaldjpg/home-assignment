@@ -5,7 +5,7 @@ interface InputFieldProps<
   TFormValues extends FieldValues = FieldValues,
   TPath extends FieldPath<TFormValues> = FieldPath<TFormValues>
 > extends React.InputHTMLAttributes<HTMLInputElement> {
-  control: Control<TFormValues>;
+  control?: Control<TFormValues>;
   name: TPath;
   rules?: RegisterOptions<TFormValues, TPath>;
   label?: string;

@@ -4,6 +4,7 @@ import InputField from "components/InputField";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import Card, { CardProps } from "@/components/Card";
+import Button from "@/components/Button";
 
 export type ForgotEmailFormValues = typeof defaultValues;
 const defaultValues = {
@@ -57,9 +58,9 @@ const ForgotEmailCard: React.FC<ForgotEmailCardProps> = ({
               required: t("validation.required"),
             }}
           />
-          <button type="submit" className="w-full block mt-4">
+          <Button type="submit" className="w-full block mt-4">
             {t("forgotEmail.send")}
-          </button>
+          </Button>
           <div className="text-center block mt-4">
             <Link
               href={`/`}
