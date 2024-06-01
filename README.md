@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Home Assignment Overview
 
-First, run the development server:
+This repository contains a home assignment which built from scratch with Next 14 using App Router. Designed to assess proficiency in specific technical skills and problem-solving abilities. Below is a summary of the contents and objectives of the assignment:
+
+## Requirement
+
+Node.js 18+ or later.
+
+## Installation
+
+To set up the project, clone the repository and install dependencies using your preferred package manager (npm, yarn, pnpm, or bun). 
+
+```bash
+npm install
+```
+
+To start the development server with:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To start the production server we need to run the "build" and "start" scripts by doing:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+# Built successfully then run start script
+npm start 
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Repository Structure
 
-## Learn More
+```bash
+├── README.md                       # A brief explanation about repository
+├── .vscode                         # VSCode configuration
+├── public                          # Static assets like images and fonts
+├── messages                        # Internationalization messages defined
+├── src
+│   ├── components                  # Usable components
+│   ├── app                         # Next app routing
+│   └── utils                       # Containing config, helperful utilities function
+│   └── globals.css                 # Global css + tailwind
+│   └── i18n.ts                     # Internalization request-scoped configuration
+│   └── middleware.ts               # Routing middleware
+│   └── navigation.ts               # Next.js navigation APIs that handle the user locale
+├── .gitignore                      # Specifies files and directories for Git to ignore
+├── tsconfig.json                   # Configuration for TypeScript
+├── next.config.mjs                 # Next.js configuration settings
+└── tailwind.config.ts              # Tailwind theme configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Techonologies used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Language: Typescript.
+- Framework: NextJS 14 App Router.
+- CSS utility framework: TailwindCSS.
+- State management with Zustand.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+And here are few extra tech that I used in the assignment (if there is any libraries that i'm not allowed to use, I could change to another solutaion solving without it):
+- [react-hook-form](https://react-hook-form.com/): Hook based, lightweight, isolate re-renders combining with code splitting and generic typescript would create field component with the reusability, type-safety, easier to read and maintain.
+- [next-intl](https://next-intl-docs.vercel.app/): Also hook based, supporting both internationalized routing and non-routing, handles server-side redirects and rewrites based on the detected user locale.

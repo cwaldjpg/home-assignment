@@ -28,14 +28,14 @@ const ForgotEmailCard: React.FC<ForgotEmailCardProps> = ({
   });
 
   return (
-    <Card isLoading={isLoading} className={`max-w-3xl w-full flex justify-between items-stretch p-0 ${className}`}>
+    <Card isLoading={isLoading} className={`max-w-3xl w-full flex flex-col md:flex-row justify-between items-stretch p-0 ${className}`}>
       <div className="flex-1 p-6 flex flex-col items-center">
         <h1 className="text-center text-2xl font-medium mb-6">
           {t("forgotEmail.subTitle")}
         </h1>
         <p className="text-center">{t("forgotEmail.description")}</p>
       </div>
-      <div className="border-l-2 border-orange-500 border-solid my-6" />
+      <div className="border-b-2 md:border-l-2 border-orange-500 border-solid mx-6 md:mx-0 md:my-6" />
       <div className="flex-1 p-6">
         <h1 className="text-center text-2xl font-medium mb-6">
           {t("forgotEmail.title")}
@@ -50,7 +50,7 @@ const ForgotEmailCard: React.FC<ForgotEmailCardProps> = ({
             }}
           />
           <InputField
-            placeholder={t("form.lastName")}
+            placeholder={t("form.firstName")}
             name="firstName"
             control={control}
             rules={{
