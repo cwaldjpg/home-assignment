@@ -62,7 +62,7 @@ export default function ForgotEmailPage() {
         }
       />
       <p
-        className={`absolute text-3xl opacity-0 z-0 ${
+        className={`absolute px-6 text-3xl text-center opacity-0 z-0 ${
           fullName ? "animate-fadeIn animation-delay-500 z-[1]" : ""
         }`}
       >

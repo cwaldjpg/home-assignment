@@ -54,7 +54,7 @@ export default function LoginPage() {
         isLoading={isLoading}
       />
       <p
-        className={`absolute text-3xl opacity-0 z-0 ${
+        className={`absolute text-3xl px-6 text-center opacity-0 z-0 ${
           email ? "animate-fadeIn animation-delay-500 z-[1]" : ""
         }`}
       >
