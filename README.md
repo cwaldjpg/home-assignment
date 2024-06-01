@@ -5,7 +5,7 @@ This repository contains a home assignment which built from scratch with Next 14
 
 ## Requirement
 
-Node.js 18+ or later.
+Node.js 18+ or later (Using 20.12.0 during the assignment).
 
 ## Installation
 
@@ -34,15 +34,17 @@ npm start
 ```bash
 ├── README.md                       # A brief explanation about repository
 ├── .vscode                         # VSCode configuration
+├── .storybook                      # Storybook configuration
 ├── public                          # Static assets like images and fonts
 ├── messages                        # Internationalization messages defined
 ├── src
 │   ├── components                  # Usable components
 │   ├── app                         # Next app routing
-│   └── utils                       # Containing config, helperful utilities function
-│   └── globals.css                 # Global css + tailwind
-│   └── i18n.ts                     # Internalization request-scoped configuration
-│   └── middleware.ts               # Routing middleware
+│   ├── stories                     # Stories define
+│   ├── utils                       # Containing config, helperful utilities function
+│   ├── globals.css                 # Global css + tailwind
+│   ├── i18n.ts                     # Internalization request-scoped configuration
+│   ├── middleware.ts               # Routing middleware
 │   └── navigation.ts               # Next.js navigation APIs that handle the user locale
 ├── .gitignore                      # Specifies files and directories for Git to ignore
 ├── tsconfig.json                   # Configuration for TypeScript
@@ -59,4 +61,17 @@ npm start
 
 And here are few extra tech that I used in the assignment (if there is any libraries that i'm not allowed to use, I could change to another solutaion solving without it):
 - [react-hook-form](https://react-hook-form.com/): Hook based, lightweight, isolate re-renders combining with code splitting and generic typescript would create field component with the reusability, type-safety, easier to read and maintain.
-- [next-intl](https://next-intl-docs.vercel.app/): Also hook based, supporting both internationalized routing and non-routing, handles server-side redirects and rewrites based on the detected user locale.
+- [next-intl](https://next-intl-docs.vercel.app/): Preferred by NextJS itself, hook based, supporting both internationalized routing and non-routing, handles server-side redirects and rewrites based on the detected user locale.
+
+## Storybook
+
+Adding storybook to showcase UI component in this assignment:
+- Button
+- InputField
+- Page
+
+To start storybook with: 
+
+```bash
+npm run storybook
+```

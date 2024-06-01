@@ -4,6 +4,7 @@ import InputField from "components/InputField";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import Card, { CardProps } from "components/Card";
+import Button from "@/components/Button";
 
 export type LoginFormValues = typeof defaultValues;
 const defaultValues = {
@@ -44,9 +45,9 @@ const LoginCard: React.FC<LoginCardProps> = ({
             },
           }}
         />
-        <button type="submit" className="w-full block mt-4">
+        <Button type="submit" className="w-full block mt-4">
           {t("login.title")}
-        </button>
+        </Button>
         <div className="text-center block mt-4">
           <Link
             href={`/forgot-email`}
