@@ -68,7 +68,8 @@ And here are few extra tech that I used in the assignment (if there is any libra
 Adding storybook to showcase UI component in this assignment:
 - Button
 - InputField
-- Page
+- Card
+- Loader
 
 To start storybook with: 
 
