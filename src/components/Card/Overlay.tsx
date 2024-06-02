@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from 'components/Loader'
 
 const Overlay = ({ visible }: { visible?: boolean }) => {
   return (
@@ -7,7 +8,7 @@ const Overlay = ({ visible }: { visible?: boolean }) => {
         visible ? "animate-fadeIn z-20" : "opacity-0 hidden"
       }`}
     >
-      <div className="w-12 h-12 rounded-full animate-spin border-[6px] border-orange-500 border-b-transparent" />
+      <Loader />
     </div>
   );
 };

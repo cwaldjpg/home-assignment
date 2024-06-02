@@ -2,21 +2,17 @@ import type { Preview } from "@storybook/react";
 import { NextIntlClientProvider } from "next-intl";
 import React from "react";
 import "../src/globals.css";
-import messages from "../messages/en.json";
+import jaMessages from "../messages/ja.json";
+import enMessages from "../messages/en.json";
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
+    locale: 'ja'
   },
   decorators: [
-    (Story) => {
+    (Story, { parameters }) => {
       return (
-        <NextIntlClientProvider locale="en" messages={messages}>
+        <NextIntlClientProvider locale={parameters.locale} messages={parameters.locale === 'ja' ? jaMessages: enMessages }>
           <Story />
         </NextIntlClientProvider>
       );
