@@ -76,3 +76,6 @@ To start storybook with:
 ```bash
 npm run storybook
 ```
+
+## Deployment
+Deploy with Vercel production on: https://home-assignment-ljaze52l7-cwaldjpgs-projects.vercel.app/
